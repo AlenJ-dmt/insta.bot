@@ -54,14 +54,21 @@ def click_on_followers(num):
 
     i = 0
     while num > i:
-        
-        pyautogui.moveTo(pyautogui.locateCenterOnScreen('follow_btn.png'))
-        time.sleep(3)
-        pyautogui.click()
-        time.sleep(5)
-        pyautogui.scroll(-100)
-        time.sleep(3)
-        i = i + 1
+
+        if str(pyautogui.locateCenterOnScreen('ok.png')) != 'None':
+            time.sleep(3)
+            pyautogui.moveTo(pyautogui.locateCenterOnScreen('ok.png'))
+            time.sleep(2)
+            pyautogui.click()
+
+        else:
+            pyautogui.moveTo(pyautogui.locateCenterOnScreen('seguir_btn.png'))
+            time.sleep(3)
+            pyautogui.click()
+            time.sleep(5)
+            pyautogui.scroll(-100)
+            time.sleep(3)
+            i = i + 1
     pyautogui.moveTo(pyautogui.locateCenterOnScreen('close_followers_btn.png'))
     pyautogui.click()
 
